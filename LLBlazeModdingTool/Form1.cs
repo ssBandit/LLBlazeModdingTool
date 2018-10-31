@@ -48,7 +48,7 @@ namespace LLBlazeModdingTool
                 {
                     UnityEXController.PlaceFile(gameDir, file, skinListBox.SelectedItem.ToString());
                 }
-                UnityEXController.ZipArchive(gameDir);
+                UnityEXController.ZipArchive(gameDir, keepConsoleCheckBox.CheckState == CheckState.Checked);
                 Thread.Sleep(5000);
                 MessageBox.Show("Completed successfully, your skin(s) are now in the game \n ...probably, this message doesn't know shit, it's just for show", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -161,7 +161,7 @@ namespace LLBlazeModdingTool
 
         private void unzipButton_Click(object sender, EventArgs e)
         {
-            UnityEXController.UnzipArchive(gameDir);
+            UnityEXController.UnzipArchive(gameDir, keepConsoleCheckBox.CheckState == CheckState.Checked);
             openTextureButton.Enabled = true;
         }
 

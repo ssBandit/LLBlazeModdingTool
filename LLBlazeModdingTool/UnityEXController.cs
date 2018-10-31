@@ -10,10 +10,11 @@ namespace LLBlazeModdingTool
     class UnityEXController
     {
 
-        public static void UnzipArchive(string gameDir)
+        public static void UnzipArchive(string gameDir, bool keepConsole = false)
         {
+            string consoleKeep = keepConsole ? "/K" : "/c";
             string strCmdText = $"unityEX export \"{gameDir}mainmodels\" -t tex";
-            System.Diagnostics.Process.Start("CMD.exe", "/c" + strCmdText);
+            System.Diagnostics.Process.Start("CMD.exe", consoleKeep + strCmdText);
             
             /*if (!File.Exists($"{gameDir}backup\\mainmodels"))
             {
@@ -46,10 +47,11 @@ namespace LLBlazeModdingTool
             File.Copy(fileDir, destinationFileName, true);
         }
 
-        public static void ZipArchive(string gameDir)
+        public static void ZipArchive(string gameDir, bool keepConsole = false)
         {
+            string consoleKeep = keepConsole ? "/K" : "/c";
             string strCmdText = $"cd {gameDir} & {gameDir}unityEX.exe import \"{gameDir}mainmodels\"";
-            System.Diagnostics.Process.Start("CMD.exe", "/c" + strCmdText);
+            System.Diagnostics.Process.Start("CMD.exe", consoleKeep + strCmdText);
         }
     }
 }

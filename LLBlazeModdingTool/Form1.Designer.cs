@@ -35,6 +35,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.unzipButton = new System.Windows.Forms.Button();
             this.infoButton = new System.Windows.Forms.Button();
+            this.keepConsoleCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // openTextureButton
@@ -81,7 +82,7 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "LLBlaze dds Files|*tex.dds";
+            this.openFileDialog1.Filter = "LLBlaze dds Files|*.dds";
             this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
@@ -105,11 +106,22 @@
             this.infoButton.UseVisualStyleBackColor = true;
             this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
             // 
+            // keepConsoleCheckBox
+            // 
+            this.keepConsoleCheckBox.AutoSize = true;
+            this.keepConsoleCheckBox.Location = new System.Drawing.Point(34, 244);
+            this.keepConsoleCheckBox.Name = "keepConsoleCheckBox";
+            this.keepConsoleCheckBox.Size = new System.Drawing.Size(117, 17);
+            this.keepConsoleCheckBox.TabIndex = 7;
+            this.keepConsoleCheckBox.Text = "keep console open";
+            this.keepConsoleCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 274);
+            this.Controls.Add(this.keepConsoleCheckBox);
             this.Controls.Add(this.infoButton);
             this.Controls.Add(this.unzipButton);
             this.Controls.Add(this.label1);
@@ -135,6 +147,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button unzipButton;
         private System.Windows.Forms.Button infoButton;
+        private System.Windows.Forms.CheckBox keepConsoleCheckBox;
     }
 }
 
